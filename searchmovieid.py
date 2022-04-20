@@ -3,19 +3,19 @@ import imdb
 moviesDB = imdb.IMDb()
 
 # # Help?
-# print(dir(moviesDB))
+#print(dir(moviesDB))
 # ----------------------------------------
 # 1) Search for a title
 movies = moviesDB.search_movie('inception')
 
-# print('Searching for "inception":')
-# for movie in movies:
-#     title = movie['title']
-#     year = movie['year']
-#     print(f'{title} - {year}')
+print('Searching for "inception":')
+for movie in movies:
+     title = movie['title']
+     year = movie['year']
+     print(f'{title} - {year}')
 
 ## Help?
-# print(movies[0].keys())
+print(movies[0].keys())
 
 
 # ----------------------------------------

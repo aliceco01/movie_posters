@@ -1,3 +1,4 @@
+import imdb
 import os
 import requests
 
@@ -69,8 +70,28 @@ def tmdb_posters(imdbid, count=None, outpath='.'):
     _download_images(urls, outpath)
 
 
+################################################# search movie id
+
 #if __name__ == "__main1__":
 
 tmdb_posters('tt0095016')
 #print(path)
 print(get_poster_urls("tt0095016"))
+
+########################
+import imdb
+
+moviesDB = imdb.IMDb()
+
+# # Help?
+#print(dir(moviesDB))
+# ----------------------------------------
+# 1) Search for a title
+movie_name=input("please enter movie name to look for : ")
+movies = moviesDB.search_movie(movie_name)
+
+print('Searching for:',movie_name)
+id = movies[0].getID()
+movie = moviesDB.get_movie(id)
+print("tt",id,sep="")
+tmdb_posters("tt"+id)
